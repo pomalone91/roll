@@ -2,7 +2,7 @@
 A command line based dice roller dice roller
 
 ## Installation
-```brew install pomalone91/termiroll/termiroll````
+```brew install pomalone91/termiroll/termiroll```
 
 ## Usage
 Currently only has an interactive mode. Type ```roll``` from the command line and then type rolls in the format #d#(+/-)#.
