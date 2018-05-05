@@ -1,4 +1,3 @@
-++Roll README++
 # termiroll
 A command line based dice roller.
 
