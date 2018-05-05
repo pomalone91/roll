@@ -10,4 +10,8 @@ import Foundation
 
 let roll = Roll()
 
-roll.interactiveMode()
+if CommandLine.argc > 1 {
+    roll.staticMode()
+} else {
+    roll.interactiveMode()
+}

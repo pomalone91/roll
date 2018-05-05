@@ -8,13 +8,16 @@
 
 import Foundation
 class Roll {
+    
+    var numberOfDie = 0
+    var valueOfDie = 0
+    var modifier = 0
+    var quitting = false
+    
     let console = ConsoleIO()
     
     func interactiveMode() {
-        var numberOfDie: Int
-        var valueOfDie: Int
-        var modifier = 0
-        var quitting = false
+        
         console.welcomeMessage()
         console.writeMessage("roll: ")
         while  !quitting {
@@ -58,6 +61,31 @@ class Roll {
     }
     
     func staticMode() {
-        // TODO implement static mode
+        // Get arguments
+        let argument = CommandLine.arguments[1]
+        print(argument)
+        let rollValues = console.getValues(argument)
+        if rollValues.count < 2 {
+            print("Not enough data for a roll, bye!")
+        } else if rollValues.count > 2 {
+            numberOfDie = rollValues[0]
+            valueOfDie = rollValues[1]
+            modifier = rollValues[2]
+        } else {
+            numberOfDie = rollValues[0]
+            valueOfDie = rollValues[1]
+        }
+        
+        // Figure out if the modifier is positive or negative
+        let rollSymbol = console.getSymbol(argument)
+        //            print("rollSymbol \(rollSymbol)")
+        if rollSymbol.count > 0 {
+            if rollSymbol[0] == "-" {
+                modifier = -modifier
+            }
+        }
+        
+        let dieToRoll = Die(sides: UInt32(valueOfDie), totalDice: numberOfDie, modifier: modifier)
+        print(dieToRoll.rollDie())
     }
 }

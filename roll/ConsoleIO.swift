@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import AppKit
+import Cocoa
 
 enum OutputType {
     case error
@@ -76,12 +78,9 @@ class ConsoleIO {
             }
         } catch let error {
             print("invalid regex: \(error.localizedDescription)")
+        
             return []
         }
-    }
-    
-    func rollMessage() {
-        // Print the die rolled and the result
     }
 }
 
