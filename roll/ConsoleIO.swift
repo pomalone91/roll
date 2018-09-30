@@ -3,12 +3,10 @@
 //  roll
 //
 //  Created by Paul Malone on 2/4/18.
-//  Copyright © 2018 Paul Malone. All rights reserved.
 //
 
 import Foundation
-import AppKit
-import Cocoa
+import Darwin.ncurses
 
 enum OutputType {
     case error

@@ -43,6 +43,7 @@ class Roll {
             } else {
                 numberOfDie = rollValues[0]
                 valueOfDie = rollValues[1]
+                modifier = 0
             }
             
             // Figure out if the modifier is positive or negative
